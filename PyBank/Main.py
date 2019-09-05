@@ -1,8 +1,9 @@
 import os
 import csv
 
-print("Financial Analysis")
-print("----------------------------------------------")
+print("--------------------------------------------------")
+print("Financial Analysis:")
+print("--------------------------------------------------")
 
 # Total number of months included in the dataset  
   
@@ -11,27 +12,26 @@ budget_csv = os.path.join('budget_data.csv')
 with open(budget_csv,newline ='') as csvfile:
     csvreader = csv.reader(csvfile,delimiter=',')
     csv_header = next(csvfile)
-    print(f"Heater: {csv_header}")
+
     data = list(csvreader)
     row_count = len(data)
     print(f'Total Months: {row_count}')
 
 # Net total amount of "Profit/ Losses" over the entire period
  
-    total = 0
+    total1 = 0
     for row in data:
-        total += int(row[1])
-    print(f'Total: ${total}')
+        total1 += int(row[1])
+    print(f'Total: ${total1}')
 
 # Average of changes in "Profit/Losses"  
+
     total2 = 0
     row_before = int(data[0][1])
     for row in data:
-        #print(data[1])
         total2 += int(row[1]) - row_before 
         row_before = int(row[1])
-    total2 = total2 / (row_count -1)
-    print(f'Average Change: ${total2}')
+    total2 = total2 / (row_count - 1)
     print("Average Change: ${0:.2f}".format(total2))
 
 # Greatest Increase in "Profit/Losses" over the entire period
@@ -60,6 +60,8 @@ with open(budget_csv,newline ='') as csvfile:
             row_4 = row[0]
         row_before = int(row[1])
     print(f'Greatest Decrease in Profits: {row_4} $({total4})')
+    print("--------------------------------------------------")
+    
   
               
    
