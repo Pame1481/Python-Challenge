@@ -42,9 +42,9 @@ with open(election_csv,newline ='') as csvfile:
     for candidate_name in candidate_votes:
         if candidate_votes[candidate_name] == max_votes:
             max_votes = candidate_votes[candidate_name]
-            Winner = candidate_name
+            winner = candidate_name
             print("----------------------------")
-            print(f'Winner: {Winner}')
+            print(f'Winner: {winner}')
             print("----------------------------")
    
 
