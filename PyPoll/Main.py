@@ -6,7 +6,7 @@ print("Election Results:")
 print("----------------------------")
 
 # Total number of votes cast  
-  
+
 election_csv = os.path.join('election_data.csv')
 
 with open(election_csv,newline ='') as csvfile:
@@ -20,31 +20,32 @@ with open(election_csv,newline ='') as csvfile:
 
 # List of candidates, percentages of votes each candidate won, total number of votes each candidate won  
 
-    total1 = 0
-    total2 = 0
-    total3 = 0
-    total4 = 0
-
+    list_candidates = []
+    votes =[]
+    candidate_votes = {}
     for row in data:
-        if row[2] == "Khan":
-            total1 += 1
-        if row[2] == "Correy":
-            total2 += 1   
-        if row[2] == "Li":
-            total3 += 1
-        if row[2] == "O'Tooley":
-            total4 += 1
-    print(f'Khan: ({total1}) {(total1/row_count)*100:.3f}%')
-    print(f'Correy: ({total2}) {(total2/row_count)*100:.3f}%')
-    print(f'Li: ({total3}) {(total3/row_count)*100:.3f}%')
-    print(f'O\'Tooley: ({total4}) {(total4/row_count)*100:.3f}%')
-    print("----------------------------")
+        votes.append(row[0])
+        candidate_name = row[2]
+        
+        if candidate_name not in list_candidates:
+            list_candidates.append(candidate_name)
+            candidate_votes[candidate_name] = 0
+        candidate_votes[candidate_name] = candidate_votes[candidate_name] + 1
+    
+    for candidate in list_candidates:
+        print(f'{candidate}: ({candidate_votes[candidate]}) {(candidate_votes[candidate]/row_count)*100:.3f}%')
 
-# Winner of the election
-
-    Winner = [total1, total2, total3, total4]  
-    Winner_name = ("Khan","Correy","Li","O'Tooley")
-    print(f'Winner: {Winner_name[Winner.index(max(Winner))]}')
-    print("----------------------------")
+# The winner of the election
+   
+    max_votes = max(candidate_votes.values())
+    
+    for candidate_name in candidate_votes:
+        if candidate_votes[candidate_name] == max_votes:
+            max_votes = candidate_votes[candidate_name]
+            Winner = candidate_name
+            print("----------------------------")
+            print(f'Winner: {Winner}')
+            print("----------------------------")
+   
 
       
