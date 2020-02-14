@@ -24,3 +24,24 @@ In this challenge, you are tasked with creating a Python script for analyzing th
 
 6. The greatest decrease in losses (date and amount) over the entire period
 
+## PyPoll
+
+In this challenge, you are tasked with helping a small, rural town modernize its vote-counting process. (Up until now, Uncle Cleetus had been trustfully tallying them one-by-one, but unfortunately, his concentration isn't what it used to be.)
+
+
+You will be give a set of poll data called election_data.csv. The dataset is composed of three columns: Voter ID, County, and Candidate. Your task is to create a Python script that analyzes the votes and calculates each of the following:
+
+
+1. The total number of votes cast
+
+
+2. A complete list of candidates who received votes
+
+
+3. The percentage of votes each candidate won
+
+
+4. The total number of votes each candidate won
+
+
+5. The winner of the election based on popular vote.
