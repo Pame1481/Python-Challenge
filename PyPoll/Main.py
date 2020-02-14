@@ -47,6 +47,8 @@ with open(election_csv,newline ='') as csvfile:
         if candidate_votes[candidate_name] == max_votes:
             max_votes = candidate_votes[candidate_name]
             winner = candidate_name
+            
+            # Print the winning candidate (to terminal)
             print("----------------------------")
             print(f'Winner: {winner}')
             print("----------------------------")
