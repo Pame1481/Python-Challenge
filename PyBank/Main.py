@@ -10,7 +10,9 @@ print("Financial Analysis:")
 print("--------------------------------------------------")
 
 # Total number of months included in the dataset  
-  
+
+# Files to load and output
+
 budget_csv = os.path.join('budget_data.csv')
 
 with open(budget_csv,newline ='') as csvfile:
