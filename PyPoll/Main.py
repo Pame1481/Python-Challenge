@@ -11,6 +11,8 @@ print("----------------------------")
 
 # 1. Total number of votes cast  
 
+    # Files to load and output:
+
 election_csv = os.path.join('election_data.csv')
 
 with open(election_csv,newline ='') as csvfile:
@@ -47,7 +49,7 @@ with open(election_csv,newline ='') as csvfile:
         if candidate_votes[candidate_name] == max_votes:
             max_votes = candidate_votes[candidate_name]
             winner = candidate_name
-            
+
             # Print the winning candidate (to terminal)
             print("----------------------------")
             print(f'Winner: {winner}')
