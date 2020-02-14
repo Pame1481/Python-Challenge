@@ -9,7 +9,7 @@ print("----------------------------")
 print("Election Results:")
 print("----------------------------")
 
-# Total number of votes cast  
+# 1. Total number of votes cast  
 
 election_csv = os.path.join('election_data.csv')
 
@@ -22,7 +22,7 @@ with open(election_csv,newline ='') as csvfile:
     print(f'Total Votes: {row_count}')
     print("----------------------------")
 
-# List of candidates, percentages of votes each candidate won, total number of votes each candidate won  
+# 2. List of candidates, percentages of votes each candidate won, total number of votes each candidate won  
 
     list_candidates = []
     votes =[]
@@ -39,7 +39,7 @@ with open(election_csv,newline ='') as csvfile:
     for candidate in list_candidates:
         print(f'{candidate}: ({candidate_votes[candidate]}) {(candidate_votes[candidate]/row_count)*100:.3f}%')
 
-# The winner of the election
+# 3. The winner of the election
    
     max_votes = max(candidate_votes.values())
     
