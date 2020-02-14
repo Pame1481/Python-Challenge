@@ -9,9 +9,9 @@ print("--------------------------------------------------")
 print("Financial Analysis:")
 print("--------------------------------------------------")
 
-# Total number of months included in the dataset  
+# 1.Total number of months included in the dataset  
 
-# Files to load and output
+    # Files to load and output:
 
 budget_csv = os.path.join('budget_data.csv')
 
@@ -23,14 +23,14 @@ with open(budget_csv,newline ='') as csvfile:
     row_count = len(data)
     print(f'Total Months: {row_count}')
 
-# Net total amount of "Profit/ Losses" over the entire period
+# 2. Net total amount of "Profit/ Losses" over the entire period
  
     total1 = 0
     for row in data:
         total1 += int(row[1])
     print(f'Total: ${total1}')
 
-# Average of changes in "Profit/Losses"  
+# 3. Average of changes in "Profit/Losses"  
 
     total2 = 0
     row_before = int(data[0][1])
@@ -40,7 +40,7 @@ with open(budget_csv,newline ='') as csvfile:
     total2 = total2 / (row_count - 1)
     print("Average Change: ${0:.2f}".format(total2))
 
-# Greatest Increase in "Profit/Losses" over the entire period
+# 4.Greatest Increase in "Profit/Losses" over the entire period
     
     row_3 = data[0][0]
     total3 = 0
@@ -54,7 +54,7 @@ with open(budget_csv,newline ='') as csvfile:
     print(f'Greatest Increase in Profits: {row_3} $({total3})')
     
     
-# Greatest Decrease in "Profit/Losses" over the entire period
+# 5. Greatest Decrease in "Profit/Losses" over the entire period
 
     row_4 = data[0][0]
     total4 = 0
